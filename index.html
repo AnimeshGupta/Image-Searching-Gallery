@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>‌​
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+   
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+
+  </style>
+</head>
+<body>
+
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>My Gallery</h1>      
+  </div>
+</div>
+
+<p></p>
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-6">
+    		<h2>Search</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Type your image name" id = "search"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+</div><br><br>
+
+<div class="container-fluid bg-3 text-center">    
+  
+  <div class="row">
+  
+  <a class="imgs" href="#" title="brain">
+    <div class="col-sm-3">
+      <img src="images/brain.jpg" class="img-responsive" style="width:100%" alt="Image" title="brain" >
+    <div>Brain</div>
+	</div>
+	
+
+	</a>
+    
+  <a  class="imgs" href="#"  title="wave">	
+	<div class="col-sm-3"> 
+      <img src="images/wave.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Wave</div>
+	</div>
+  </a>	
+    
+   <a  class="imgs" href="#" title="bear">
+	<div class="col-sm-3"> 
+      <img src="images/bear.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Bear</div>
+	</div>
+   </a>	
+	
+   <a class="imgs" href="#" title="man">
+    <div class="col-sm-3">
+      <img src="images/man.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Man</div>
+	</div>
+   </a>
+   
+   
+   
+   
+   
+   
+  <div class="row">
+  
+  <a class="imgs" href="#" title="earth">
+    <div class="col-sm-3">
+      <img src="images/earth.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Earth</div>
+	</div>
+  </a>
+    
+  <a  class="imgs" href="#"  title="game">	
+	<div class="col-sm-3"> 
+      <img src="images/game.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Game</div>
+	</div>
+  </a>	
+    
+   <a  class="imgs" href="#" title="pattern">
+	<div class="col-sm-3"> 
+      <img src="images/pattern.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Pattern</div>
+	</div>
+   </a>	
+	
+   <a class="imgs" href="#" title="spark">
+    <div class="col-sm-3">
+      <img src="images/spark.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Spark</div>
+	</div>
+   </a>
+   
+   
+   
+   
+   <div class="row">
+  
+  <a class="imgs" href="#" title="beauty">
+    <div class="col-sm-3">
+      <img src="images/beauty.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Beauty</div>
+	</div>
+  </a>
+    
+  <a  class="imgs" href="#"  title="track">	
+	<div class="col-sm-3"> 
+      <img src="images/track.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Track</div>
+	</div>
+  </a>	
+    
+   <a  class="imgs" href="#" title="car">
+	<div class="col-sm-3"> 
+      <img src="images/car.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Car</div>
+	</div>
+   </a>	
+	
+   <a class="imgs" href="#" title="astronaut">
+    <div class="col-sm-3">
+      <img src="images/astronaut.jpg" class="img-responsive" style="width:100%" alt="Image" >
+    <div>Astronaut</div>
+	</div>
+   </a>
+   
+   
+   
+
+  </div>
+</div><br>
+
+
+<script>
+
+
+$(document).ready(function () {
+
+$("#search").keyup(function(){
+
+    // Retrieve the input field text 
+    var filter = $(this).val();
+
+    // Loop through the captions div 
+   $(".imgs").each(function(){
+
+// If the div item does not contain the text phrase fade it out
+if ($(this).attr('title').indexOf(filter) < 0){
+    $(this).fadeOut();
+	console.log("out it");
+	}
+// Show the div item if the phrase matches 
+ else {
+    $(this).show();
+	
+	console.log("put it");
+}
+    });
+ });
+});
+
+</script>
+
+<footer class="container-fluid text-center">
+  <p><b>Made by Animesh Gupta</b></p>
+</footer>
+
+</body>
+</html>
